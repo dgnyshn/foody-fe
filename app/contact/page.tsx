@@ -11,15 +11,39 @@ export default function ContactPage() {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Contact form API entegrasyonu
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 3000);
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      }, 5000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -39,8 +63,8 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <p className="text-gray-700 leading-relaxed mb-8">
-              Have questions about Foody? We'd love to hear from you. Send us a
-              message and we'll respond as soon as possible.
+              Have questions about Meal Mates? We'd love to hear from you. Send
+              us a message and we'll respond as soon as possible.
             </p>
 
             <div className="space-y-6">
@@ -50,27 +74,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-600">hello@foody.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">💬</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Support</h3>
-                  <p className="text-gray-600">support@foody.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">🏢</span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">Business</h3>
-                  <p className="text-gray-600">business@foody.com</p>
+                  <p className="text-gray-600">info@evopra.com</p>
                 </div>
               </div>
             </div>
@@ -89,6 +93,12 @@ export default function ContactPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="bg-red-50 border-2 border-red-500 rounded-xl p-4 text-red-700">
+                    {error}
+                  </div>
+                )}
+
                 <div>
                   <label
                     htmlFor="name"
@@ -171,9 +181,10 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
+                  disabled={isLoading}
+                  className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Send Message
+                  {isLoading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             )}

@@ -1,4 +1,4 @@
-# Foody Frontend - Docker Deployment
+# Meal Mates Frontend - Docker Deployment
 
 ## Prerequisites
 

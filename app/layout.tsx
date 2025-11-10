@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Foody - Discover Recipes from Around the World",
+  title: "Meal Mates - Discover Recipes from Around the World",
   description:
-    "Join the waitlist for Foody! Discover thousands of recipes, find dishes with your ingredients, and cook with step-by-step guidance.",
+    "Join the waitlist for Meal Mates! Discover thousands of recipes, find dishes with your ingredients, and cook with step-by-step guidance.",
 };
 
 export default function RootLayout({

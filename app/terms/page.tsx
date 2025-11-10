@@ -25,9 +25,9 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              By accessing or using Foody ("the Service"), you agree to be bound
-              by these Terms of Service ("Terms"). If you do not agree to these
-              Terms, please do not use the Service.
+              By accessing or using Meal Mates ("the Service"), you agree to be
+              bound by these Terms of Service ("Terms"). If you do not agree to
+              these Terms, please do not use the Service.
             </p>
           </section>
 
@@ -36,8 +36,8 @@ export default function TermsPage() {
               2. Description of Service
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Foody is a recipe discovery and cooking assistance application
-              that provides:
+              Meal Mates is a recipe discovery and cooking assistance
+              application that provides:
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
               <li>Access to thousands of recipes from around the world</li>
@@ -89,7 +89,7 @@ export default function TermsPage() {
             <p className="text-gray-700 leading-relaxed mb-4">
               All content, features, and functionality of the Service, including
               but not limited to text, graphics, logos, images, and software,
-              are the exclusive property of Foody and are protected by
+              are the exclusive property of Meal Mates and are protected by
               copyright, trademark, and other intellectual property laws.
             </p>
           </section>
@@ -100,9 +100,9 @@ export default function TermsPage() {
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               By submitting content to the Service (recipes, reviews, comments),
-              you grant Foody a worldwide, non-exclusive, royalty-free license
-              to use, reproduce, modify, and display such content in connection
-              with the Service.
+              you grant Meal Mates a worldwide, non-exclusive, royalty-free
+              license to use, reproduce, modify, and display such content in
+              connection with the Service.
             </p>
           </section>
 
@@ -127,10 +127,10 @@ export default function TermsPage() {
               8. Limitation of Liability
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              To the maximum extent permitted by law, Foody shall not be liable
-              for any indirect, incidental, special, consequential, or punitive
-              damages, including but not limited to loss of profits, data, or
-              goodwill.
+              To the maximum extent permitted by law, Meal Mates shall not be
+              liable for any indirect, incidental, special, consequential, or
+              punitive damages, including but not limited to loss of profits,
+              data, or goodwill.
             </p>
           </section>
 
@@ -163,7 +163,7 @@ export default function TermsPage() {
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               These Terms shall be governed by and construed in accordance with
-              the laws of the jurisdiction in which Foody operates, without
+              the laws of the jurisdiction in which Meal Mates operates, without
               regard to its conflict of law provisions.
             </p>
           </section>
@@ -176,7 +176,7 @@ export default function TermsPage() {
               If you have any questions about these Terms, please contact us at:
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Email: legal@foody.com
+              Email: info@evopra.com
             </p>
           </section>
         </div>

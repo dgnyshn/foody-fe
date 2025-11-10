@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function HomePage() {
   const [email, setEmail] = useState("");
@@ -91,7 +92,7 @@ export default function HomePage() {
             <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
               Discover recipes from every cuisine, find the perfect dish with
               ingredients you have, and cook delicious meals with ease. Join our
-              waitlist to be the first to experience Foody!
+              waitlist to be the first to experience Meal Mates!
             </p>
 
             {/* Waitlist Form */}
@@ -136,47 +137,15 @@ export default function HomePage() {
           {/* App Preview */}
           <div className="relative max-w-sm mx-auto mt-20">
             <div className="absolute -inset-4 bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 rounded-3xl blur-2xl opacity-30 animate-pulse-slow"></div>
-            <div className="relative bg-white rounded-3xl shadow-2xl p-6 border-8 border-gray-800">
-              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6">
-                <div className="text-center mb-6">
-                  <p className="text-gray-600 mb-2">Good Morning!</p>
-                  <h2 className="text-2xl font-bold">
-                    What would you like to cook?
-                  </h2>
-                </div>
-                <div className="bg-white rounded-xl p-4 mb-4 shadow">
-                  <input
-                    type="text"
-                    placeholder="Search recipes..."
-                    className="w-full outline-none text-gray-700"
-                    disabled
-                  />
-                </div>
-                <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
-                  {["All", "Australian", "Malaysian", "Syrian"].map(
-                    (cuisine) => (
-                      <span
-                        key={cuisine}
-                        className="px-4 py-2 bg-gradient-to-r from-teal-500 to-blue-500 text-white rounded-full whitespace-nowrap text-sm font-medium"
-                      >
-                        {cuisine}
-                      </span>
-                    )
-                  )}
-                </div>
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg">
-                  <div className="h-32 bg-gradient-to-br from-yellow-400 to-orange-500"></div>
-                  <div className="p-4">
-                    <p className="text-xs text-blue-600 font-semibold mb-1">
-                      FRENCH
-                    </p>
-                    <h3 className="font-bold text-lg mb-1">
-                      Chicken Parmentier
-                    </h3>
-                    <p className="text-sm text-gray-500">⏱️ 35m</p>
-                  </div>
-                </div>
-              </div>
+            <div className="relative">
+              <Image
+                src="/main_page.png"
+                alt="Meal Mates Mobile App Preview"
+                width={400}
+                height={800}
+                className="w-full h-auto rounded-3xl shadow-2xl"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -186,7 +155,7 @@ export default function HomePage() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
-            Why You'll Love Foody
+            Why You'll Love Meal Mates
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -351,7 +320,7 @@ export default function HomePage() {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center mb-6">
               <span className="text-4xl mr-3">🍳</span>
-              <h3 className="text-2xl font-bold">Foody</h3>
+              <h3 className="text-2xl font-bold">Meal Mates</h3>
             </div>
 
             <p className="text-gray-400 mb-8">
@@ -382,7 +351,7 @@ export default function HomePage() {
             </div>
 
             <p className="text-gray-500 text-sm text-center">
-              © 2025 Foody. All rights reserved.
+              © 2025 Meal Mates. All rights reserved.
             </p>
           </div>
         </div>

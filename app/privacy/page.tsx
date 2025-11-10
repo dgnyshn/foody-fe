@@ -25,7 +25,7 @@ export default function PrivacyPage() {
               1. Introduction
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Welcome to Foody ("we," "our," or "us"). We are committed to
+              Welcome to Meal Mates ("we," "our," or "us"). We are committed to
               protecting your personal information and your right to privacy.
               This Privacy Policy explains how we collect, use, disclose, and
               safeguard your information when you use our application and
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
               <li>Provide, maintain, and improve our services</li>
-              <li>Send you updates about Foody's launch and features</li>
+              <li>Send you updates about Meal Mates's launch and features</li>
               <li>Personalize your recipe recommendations</li>
               <li>Respond to your comments and questions</li>
               <li>Analyze usage patterns to improve user experience</li>
