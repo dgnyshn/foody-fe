@@ -2,12 +2,29 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Script from "next/script";
 
 export default function HomePage() {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Foody",
+    applicationCategory: "LifestyleApplication",
+    operatingSystem: "iOS, Android",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+
+    description:
+      "Discover thousands of recipes, find dishes with your ingredients, and cook with step-by-step guidance. Your personal cooking companion.",
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,6 +89,13 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Structured Data for SEO */}
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-32 px-4 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIwLCAxODQsIDE2NiwgMC4xKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
@@ -187,12 +211,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Coming Soon Features */}
+      {/* Launch Features */}
       <section className="py-20 px-4 bg-gradient-to-br from-teal-50 to-cyan-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
-            🚀 In Development
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+            ✨ Launch Features
           </h2>
+          <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+            Built with your cooking needs in mind
+          </p>
 
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <div className="grid md:grid-cols-2 gap-6 text-left">
@@ -202,11 +229,11 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">
-                    Local Ingredients
+                    Global Recipe Discovery
                   </h3>
                   <p className="text-gray-600">
-                    Use ingredients available in your country to cook authentic
-                    recipes
+                    Access recipes from cuisines around the world with your
+                    available ingredients
                   </p>
                 </div>
               </div>
@@ -217,10 +244,10 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">
-                    Global Cuisines
+                    Ingredient-Based Search
                   </h3>
                   <p className="text-gray-600">
-                    Access recipes from every corner of the world
+                    Find recipes based on what you already have in your kitchen
                   </p>
                 </div>
               </div>
@@ -231,10 +258,10 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">
-                    Smart Recommendations
+                    Step-by-Step Guidance
                   </h3>
                   <p className="text-gray-600">
-                    AI-powered suggestions based on your preferences
+                    Detailed cooking instructions with timers and tips
                   </p>
                 </div>
               </div>
@@ -245,10 +272,11 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">
-                    Cooking Assistant
+                    Community-Driven Features
                   </h3>
                   <p className="text-gray-600">
-                    Step-by-step guidance for perfect results
+                    Your feedback shapes our roadmap - help us build what you
+                    need
                   </p>
                 </div>
               </div>

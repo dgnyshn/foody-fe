@@ -1,4 +1,16 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Foody's Privacy Policy. Learn how we collect, use, and protect your personal information.",
+  openGraph: {
+    title: "Privacy Policy | Foody",
+    description:
+      "Foody's Privacy Policy. Learn how we collect, use, and protect your personal information.",
+  },
+};
 
 export default function PrivacyPage() {
   return (
